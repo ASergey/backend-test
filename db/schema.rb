@@ -23,12 +23,11 @@ ActiveRecord::Schema.define(version: 20180127161415) do
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
-  create_table "books_in_shops", id: false, force: :cascade do |t|
+  create_table "books_in_shops", force: :cascade do |t|
     t.bigint "book_id", null: false
     t.bigint "shop_id", null: false
     t.integer "sold_count", default: 0
     t.integer "in_stock", default: 0
-    t.boolean "sold_out", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_books_in_shops_on_book_id"
