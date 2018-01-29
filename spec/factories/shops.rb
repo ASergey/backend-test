@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :shop do
-    name "MyString"
+    name { FFaker::BaconIpsum.word }
   end
 end
