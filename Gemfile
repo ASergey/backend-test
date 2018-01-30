@@ -9,14 +9,13 @@ end
 
 gem 'rails', '~> 5.1.4'
 
-gem 'dotenv-rails'
 gem 'pg', '~> 0.18.4'
 gem 'puma', '~> 3.7'
-
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner'
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'rspec-rails'
