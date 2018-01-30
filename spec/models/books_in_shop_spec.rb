@@ -14,6 +14,6 @@ RSpec.describe BooksInShop, type: :model do
     book_in_shop.valid?
 
     expect(book_in_shop).to_not be_valid
-    expect(book_in_shop.errors[:in_stock]).to include('not enough book copies')
+    expect(book_in_shop.errors[:in_stock]).to include('must be greater than or equal to 0')
   end
 end
