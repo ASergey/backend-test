@@ -1,6 +1,6 @@
 class Api::V1::Publishers::ShopsController < ApplicationController
   def index
-    books_in_shops = Publisher.find(params[:id]).shops.with_books
+    books_in_shops = Publisher.find(params[:id]).shops_with_books
     render json: { shops: prepare_view(books_in_shops) }
   end
 
@@ -19,6 +19,6 @@ class Api::V1::Publishers::ShopsController < ApplicationController
       }
     end
 
-    shops
+    shops.sort { |a,b| b[:books_sold_count] <=> a[:books_sold_count] }
   end
 end

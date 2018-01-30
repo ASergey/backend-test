@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BooksInShop, type: :model do
-  let(:book_in_shop) { create(:books_in_shop, sold_count: 5, in_stock: 5) }
+  let(:book_in_shop) { build(:books_in_shop, sold_count: 5, in_stock: 5) }
 
   it 'method sell_book should change in_stock and sold_count amount' do
     book_in_shop.sell_book(2)
